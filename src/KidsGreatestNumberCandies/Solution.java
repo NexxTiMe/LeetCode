@@ -13,15 +13,13 @@ import java.util.List;
  */
 public class Solution {
     public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        List<Boolean> result = new ArrayList<>();
-        int max = Arrays.stream(candies).max().orElse(0);
-        Arrays.stream(candies).forEach(value -> {
-            result.add(value + extraCandies >= max);
-        });
+        final List<Boolean> result = new ArrayList<>();
+        final int max = Arrays.stream(candies).max().orElse(0);
+        Arrays.stream(candies).forEach(value -> result.add(value + extraCandies >= max));
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(kidsWithCandies(new int[]{2,3,5,1,3},3));
+        System.out.println(kidsWithCandies(new int[]{2, 3, 5, 1, 3}, 3));
     }
 }
